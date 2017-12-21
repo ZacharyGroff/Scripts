@@ -13,7 +13,7 @@ f = open('filelog.txt', 'w+')
 print('What directory would you like to search?')
 root = str(input())
 
-#make sure path is valid
+# ensure path is valid
 if not os.path.exists(root):
     print('{} is not a valid directory'.format(root))
     sys.exit()
@@ -33,12 +33,10 @@ files_found = 0
 #   and write it to found_log
 for path in file_list:
     try:
-        
         access_date = str(datetime.date.fromtimestamp(
             os.path.getmtime(path)))
         
         if current_date == access_date:
-            
             found_log.write(path + '\naccessed:\t' 
                     + access_date + '\n')
             files_found += 1
