@@ -7,10 +7,16 @@ Two files (filelog.txt & found.txt) are created
 
 import os
 import datetime
+import sys
 
 f = open('filelog.txt', 'w+')
 print('What directory would you like to search?')
 root = str(input())
+
+#make sure path is valid
+if not os.path.exists(root):
+    print('{} is not a valid directory'.format(root))
+    sys.exit()
 
 # search directories starting at user given root
 #   and write paths to file_list
