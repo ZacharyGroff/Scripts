@@ -1,4 +1,3 @@
-#to implement: create list of tuples with mac addresses+ip 
 from scapy.all import *
 
 def print_packets(packet):
